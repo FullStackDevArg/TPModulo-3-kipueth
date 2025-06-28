@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/access/Ownable.sol"; // Added Ownable for ownership control
+
+/**
+ * @title TokenB
+ * @dev An ERC20 token with minting functionality restricted to the owner.
+ * This contract inherits from OpenZeppelin's ERC20 and Ownable for standard token behavior and access control.
+ */
+contract TokenB is ERC20, Ownable {
+    /**
+     * @notice Initializes the TokenB contract with an initial supply.
+     * @dev Sets the token name as "TokenB" and symbol as "TKB", mints 1,000,000 tokens to the deployer,
+     * and assigns ownership to the deployer.
+     */
+    constructor() ERC20("TokenB", "TKB") Ownable(msg.sender) {
+        _mint(msg.sender, 1000000000000000000000000); // 1,000,000 tokens with 18 decimals
+    }
+
+    /**
+     * @notice Mints new tokens to a specified address.
+     * @dev Only the contract owner can call this function. Mints the specified amount to the 'to' address.
+     * @param to The address to receive the minted tokens.
+     * @param amount The amount of tokens to mint.
+     */
+    function mint(address to, uint256 amount) public onlyOwner {
+        _mint(to, amount);
+    }
+}
