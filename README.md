@@ -22,6 +22,7 @@ Deployed Addresses:
 TokenA: https://sepolia.etherscan.io/address/0x03c4dac47eec187c5dc2b333c0743c6ef8a84afa#code
 TokenB: https://sepolia.etherscan.io/address/0x1e44dfac24406060acb91b6650768bfb577f7bd2#code
 SimpleSwap: https://sepolia.etherscan.io/address/0x640b356e7209b619cd0ce962f13f7c9b9cf6256b#code
+SimpleSwap correjido:(https://sepolia.etherscan.io/address/0xcA035bc50164D2447c060E24Ec414775CBf17e2F#code
 
 
 Verification: All contracts are verified on Sepolia Etherscan.
